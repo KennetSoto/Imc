@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppenChild</title> 
+    <style>
+        body { background-color: aqua;
+       } 
+    </style> 
+</head>
+<body>
+  
+    <h1>AppenChild</h1>
+
+    <form>
+        <label for="palavra">Digite uma palavra:</label><br>
+    <input type="text"
+           id="pal"
+           name="palavra">
+    <br>           
+
+    <label for="cores">Cores:</label><br>
+
+    <input type="radio"
+           id="radio1"
+           name="cores"
+           value="green">
+
+    <label for="rad1">Verde</label><br>
+
+    <input type="radio"
+           id="radio2"
+           name="cores"
+           value="white">
+
+    <label for="rad2">Branco</label><br>
+
+    <input type="radio"
+           id="radio3"
+           name="cores"
+           value="blue">
+    <label for="rad3">Azul</label><br>
+
+    </form>
+
+    <ul id="lista">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+
+    <button onclick="myFunction()">
+        Acrescentar
+    </button>
+
+    <script>
+        function myFunction() {
+            let texto = String(document.getElementById('pal').value)
+
+            const node = document.createElement("li");
+
+            const cor = document.querySelector('input[name="cores"]:checked').value;
+
+            const textnode = document.createTextNode(texto);
+
+            node.appendChild(textnode);
+
+            node.style.color = cor;
+
+            document.getElementById("lista").appendChild(node);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo do IMC</title>
+    <style>
+        body {
+            background-color: rgb(0, 234, 255);
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculo do IMC</h1>
+
+    <p>Imc: <span id="imc"></span>
+    </p>
+    <p>Situação: <span id="sit"></span>
+    </p>
+
+    <script>
+        let altura = parseFloat(prompt("Informe sua altura (cm):")/100);
+        let peso = parseFloat(prompt("Informe seu peso:"));
+        imc = peso/(altura*altura);
+        if (imc < 20) {
+            document.getElementById('imc').innerHTML = imc.toFixed(2);
+            document.getElementById('sit').innerHTML = 'Abaixo do peso';
+        }
+        else if (imc >= 20 && imc < 25) {
+            document.getElementById('imc').innerHTML = imc.toFixed(2);
+            document.getElementById('sit').innerHTML = 'Normal';
+        }
+        else if (imc >= 25 && imc < 30) {
+            document.getElementById('imc').innerHTML = imc.toFixed(2);
+            document.getElementById('sit').innerHTML = 'Sobrepeso';
+        }
+        else if (imc >= 30 && imc < 35) {
+            document.getElementById('imc').innerHTML = imc.toFixed(2);
+            document.getElementById('sit').innerHTML = 'Obesidade I';
+        }
+        else if (imc >= 35 && imc < 40) {
+            document.getElementById('imc').innerHTML = imc.toFixed(2);
+            document.getElementById('sit').innerHTML = 'Obesidade II';
+        }
+        else if (imc >= 40){
+            document.getElementById('imc').innerHTML = imc.toFixed(2);
+            document.getElementById('sit').innerHTML = 'Obesidade III';
+        }
+        else if (altura <= 0){
+            document.getElementById('sit').innerHTML = 'Número inválido, faça novamente.';
+        }
+        else if (peso < 1){
+                document.getElementById('sit').innerHTML = 'Número inválido, faça novamente.';             
+        }
+
+    </script>
+
+</body>
+
+</html>
